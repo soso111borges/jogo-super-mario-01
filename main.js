@@ -13,7 +13,7 @@ const startGame = () => {
 gameStarted = true;
 audioStart.play();
 
-pipe.style.animation = ="pipe-animation 1.5s infinite linear";
+pipe.style.animation = "pipe-animation 1.5s infinite linear";
     
 startButton.style.display = "none";
 mario.style.opacity = "1";
@@ -54,8 +54,8 @@ const jump = () => {
             clearInvertaval(loop);
             gemeOverScreen.style.display = "flex";
 
-         }        }
+         } 
     },10);
         
-    
+
 document.addEventListener("keydown",jump);
