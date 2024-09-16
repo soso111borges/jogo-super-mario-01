@@ -1,5 +1,6 @@
 const mario = document.querySelector(".mario");
 const pipe = document.querySelector(".pipe");
+const nuvem = document.querySelector(".nevem")
 const startButton = document.querySeeletor(".start");
 const gameOverScreen = document.querySeletor(".game=over");
 
@@ -22,15 +23,15 @@ clouds.style.opacity = "1";
 }
 
 const jump = () => {
-    if
+    if(gemeStarted) {
     mario.classList.add("jump");
 
     setTimeout(() => {
         mario.classList.remove("jump")
     } 
     ,500);
-}
-
+ }
+ }
     const loop = setInterval (() => {
         const pipePosition = pipe.offsetLeft;
         const marioPosition = +window.getComputedStyle(mario).bottom.replace("px", "");
@@ -42,12 +43,19 @@ const jump = () => {
             mario.style.animation = "none";
             mario.style.left = `${marioPosition}px`;
 
+
             mario.src = "./img/game-over.png";
             mario.style.width = "75px";
             mario.style.marginLeft = "50px";
+            audioStart.pause ();
+
+            gameOverSound.play ();
 
             clearInvertaval(loop);
-        }
+            gemeOverScreen.style.display = "flex";
+
+         }        }
     },10);
         
+    
 document.addEventListener("keydown",jump);
