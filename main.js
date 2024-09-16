@@ -59,3 +59,8 @@ const jump = () => {
         
 
 document.addEventListener("keydown",jump);
+
+const restartGame = () => {
+
+    window.location.reload();
+}
